@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+body{margin:0;padding:0;}
+#auto{position:relative;width:100%;height:40px;overflow:hidden;}
+#auto div{position:absolute;top:0;left:0;width:100%;}
+</style>
+</head>
+
+<body>
+
+<div id="auto" name="title"></div>
+
+
+<script type="text/javascript">
+
+//内容写在变量里
+var mytext = "大家好，新年快乐~";
+var all_w = document.documentElement.clientWidth;
+var pm = document.getElementById("auto");
+//创建节点和内容
+addnode()
+addnode()
+
+//创建节点和内容函数
+function addnode(){
+var newItem=document.createElement("div")
+var textnode=document.createTextNode(mytext)
+newItem.appendChild(textnode)
+pm.insertBefore(newItem,pm.childNodes[0]);
+}
+
+//第一个对象的定位
+pm.childNodes[0].style.left = -all_w +"px";
+i=0;
+function anima(){
+
+i = i+1;
+pm.childNodes[0].style.left = (i-all_w) +"px";
+pm.childNodes[1].style.left = i +"px";
+//当第二个对象等于窗口宽时删除
+	if(i > all_w || i == all_w){
+	i = 0;
+	pm.removeChild(pm.childNodes[1]);
+	addnode()
+	}
+//console.log(i)
+}
+//速度快慢调整第二个参数
+setInterval(anima,5)
+
+
+</script>
+</body>
+</html>
