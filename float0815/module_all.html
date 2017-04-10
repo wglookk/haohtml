@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<style>
+body{margin:0;padding:0;font-family:"微软雅黑";}
+ul,li{margin:0;padding:0;list-style-type:none;}
+img{border:0;}
+a{text-decoration:none;}
+
+.skdesigner-floatselectn{border:1px solid #DADADC;position:relative;background:url(img/skong-buttonbg.jpg) repeat-x;}
+.skdesigner-floatselectn:after{content:".";display:block;clear:both;visibility:hidden;height:0;}
+.skdesigner-floatselectnc{height:28px;line-height:28px;padding:0 30px 0 8px;font-size:12px;color:#666666;overflow:hidden;}
+.skdesigner-floatselectnb{position:absolute;right:0;top:0;height:28px;width:30px;cursor:pointer;}
+.skdesigner-floatselectnb span.icon{display:block;height:12px;width:12px;margin:9px 0 0 9px;background:url(img/skong-add3.png) no-repeat 0 4px;}
+.skdesigner-floatselectn .select span.icon{background-position:0 -8px;}
+.skdesigner-floatselectnlist{position:absolute;top:28px;left:-1px;border:1px solid #D5D5D5;border-top:0;font-size:12px;color:#666666;display:none;z-index:2;}
+.skdesigner-floatselectnlist ul li{display:block;width:100%;clear:left;line-height:28px;border-top:1px solid #D5D5D5;white-space:nowrap;background:#EDEDEF;}
+.skdesigner-floatselectnlist ul li span.texta{padding:0 8px;display:block;cursor:pointer;}
+.skdesigner-floatselectnlist ul li span.imga{display:block;width:200px;height:30px;overflow:hidden;border:1px solid #fff;cursor:pointer;}
+.skdesigner-floatselectnlist ul li:hover{background:#F7F7F7;}
+.skdesigner-floatselectnlist ul li:hover span.imga{border-color:red;}
+.skdesigner-floatselectnc img{margin-left:-7px;}
+
+</style>
+<script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+//select列表节点选取事件
+$(".skdesigner-floatselectnlist").find("li").find("span").click(function(){
+
+var id = $(this).parents(".skdesigner-floatselectn").find(".skdesigner-floatselectnb").attr("id");
+
+var texta =$(this).html();
+
+$("#"+id).parents(".skdesigner-floatselectn").find(".skdesigner-floatselectnc").html(texta);
+$("#"+id).parents(".skdesigner-floatselectn").find(".skdesigner-floatselectnlist").hide();
+})	
+////
+
+//划过select
+$(".skdesigner-floatselectn").hover(function(){
+	var id = $(this).find(".skdesigner-floatselectnb").attr("id")	
+	var topobj = $("#"+id).parents(".skdesigner-floatselectn");
+
+	topobj.find(".skdesigner-floatselectnlist").show()
+	$("#"+id).addClass("select")
+},function(){
+	var id = $(this).find(".skdesigner-floatselectnb").attr("id")
+	var topobj = $("#"+id).parents(".skdesigner-floatselectn");
+	topobj.find(".skdesigner-floatselectnlist").hide()
+	$("#"+id).removeClass("select")
+})
+//
+
+})
+
+</script>
+</head>
+
+<body>
+
+<div class="skdesigner-floatselectn">
+	<div class="skdesigner-floatselectnc">简约</div>
+	<div class="skdesigner-floatselectnb" id="skdesigner-floatselectnbone"><span class="icon"></span></div>
+	<div class="skdesigner-floatselectnlist">
+	<ul>
+	<li id="li11"><span class="texta">简约2</span></li>
+	<li id="li12"><span class="texta">简约33</span></li>
+	<li id="li13"><span class="texta">简约444简约444</span></li>	
+	</ul>
+	</div>
+</div>
+
+<div style="height:100px;"></div>
+
+<div class="skdesigner-floatselectn">
+	<div class="skdesigner-floatselectnc">简约</div>
+	<div class="skdesigner-floatselectnb" id="skdesigner-floatselectnbtwo"><span class="icon"></span></div>
+	<div class="skdesigner-floatselectnlist">
+	<ul>
+	<li id="li11"><span class="texta">简约2</span></li>
+	<li id="li12"><span class="texta">简约33</span></li>
+	<li id="li13"><span class="texta">简约444简约444</span></li>	
+	</ul>
+	</div>
+</div>
+
+
+<div style="height:100px;"></div>
+
+<div class="skdesigner-floatselectn">
+	<div class="skdesigner-floatselectnc">简约</div>
+	<div class="skdesigner-floatselectnb" id="skdesigner-floatselectnbthree"><span class="icon"></span></div>
+	<div class="skdesigner-floatselectnlist">
+	<ul>
+	<li id="li11"><span class="texta">简约2</span></li>
+	<li id="li12"><span class="texta">简约33</span></li>
+	<li id="li13"><span class="texta">简约444简约444</span></li>	
+	</ul>
+	</div>
+</div>
+
+
+<div style="height:100px;"></div>
+
+<div class="skdesigner-floatselectn">
+	<div class="skdesigner-floatselectnc">简约</div>
+	<div class="skdesigner-floatselectnb" id="skdesigner-floatselectnbfour"><span class="icon"></span></div>
+	<div class="skdesigner-floatselectnlist">
+	<ul>
+	<li><span class="imga"><img src="img/a1.jpg" /></span></li>
+	<li><span class="imga"><img src="img/a2.jpg" /></span></li>
+	<li><span class="imga"><img src="img/a1.jpg" /></span></li>
+	</ul>
+	</div>
+</div>
+
+</body>
+</html>

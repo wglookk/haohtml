@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<style>
+body{margin:0;padding:0;font-family:"微软雅黑";}
+ul,li{margin:0;padding:0;list-style-type:none;}
+img{border:0;}
+a{text-decoration:none;}
+.select-butt{height:30px;width:200px;line-height:30px;text-align:center;background:#EEE;margin:10px;}
+.select-butt{
+-moz-user-select:none;/*火狐*/
+-webkit-user-select:none;/*webkit浏览器*/
+-ms-user-select:none;/*IE10*/
+-khtml-user-select:none;/*早期浏览器*/
+user-select:none;
+}
+</style>
+<script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+//select列表节点选取事件
+$(".select-butt").live("click",function(){
+console.log($(this).hasClass("hui"))
+if($(this).hasClass("hui")){
+	$(".select-con").find("li:eq(0)").hide();
+	}else{
+	$(".select-con").find("li:eq(0)").show();
+	}
+})
+})
+
+
+
+function whether(){
+
+	if($(this).attr("class") == "hui"){
+	$(".select-con").find("li:eq(0)").hide();
+	}else{
+	$(".select-con").find("li:eq(0)").show();
+	}
+}
+</script>
+</head>
+
+<body>
+
+
+<div class="select-butt hui">aaa</div>
+
+<div class="select-butt">bbb</div>
+
+
+<div class="select-con">
+	<ul>
+	<li>0</li>
+	<li>1</li>
+	<li>2</li>
+	</ul>
+</div>
+
+
+</body>
+</html>
