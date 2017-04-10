@@ -1,0 +1,25 @@
+<meta content="user-scalable=no" name="viewport" />
+<meta 
+content="width=device-width,
+
+initial-scale=1.0, 初始的缩放比例
+minimum-scale=1.0, 允许用户缩放到的最小比例
+maximum-scale=1.0, 允许用户缩放到的最大比例  
+user-scalable=no"  用户是否可手动缩放
+name="viewport" 
+
+/>
+
+
+01	<!-- html document -->
+02	<meta name="viewport"
+03	    content="
+04	        height = [pixel_value | device-height] ,
+05	        width = [pixel_value | device-width ] ,
+06	        initial-scale = float_value ,
+07	        minimum-scale = float_value ,
+08	        maximum-scale = float_value ,
+09	        user-scalable = [yes | no] ,
+10	        target-densitydpi = [dpi_value | device-dpi | high-dpi | medium-dpi | low-dpi]屏幕像素密度
+11	    "
+12	/>

@@ -1,0 +1,75 @@
+测试浏览器兼容网站caniuse.com
+
+color:brown\9; // 所有IE浏览器 
++color:red; // IE7 
+_color:green; // IE6 
+IE7优先识别!important，IE6不能识别!important。
+background:orange;*background:green!important;*background:blue; 
+
+IE8/FF都不识别*，
+opacity: 0.5;filter:alpha(opacity=50);-moz-opacity:0.5;
+filter:alpha(opacity=50);
+ -moz-opacity:0.5;
+ -khtml-opacity: 0.5;
+ opacity: 0.5;
+
+ onclick="window.location.href('连接')"
+
+
+ddd:after{display:block;clear:both;content:".";visibility:hidden;height:0;}
+
+
+
+结构体 构造函数
+
+function dom() {
+
+var s= document.getElementById("test");
+
+del_ff(s);    //清理空格
+
+var chils= s.childNodes;  //得到s的全部子节点
+
+var par=s.parentNode;   //得到s的父节点
+
+var ns=s.nextSbiling;   //获得s的下一个兄弟节点
+
+var ps=s.previousSbiling;  //得到s的上一个兄弟节点
+
+var fc=s.firstChild;   //获得s的第一个子节点
+
+var lc=s.lastChile;   //获得s的最后一个子节点
+
+}
+
+//模糊
+.row {
+	-webkit-filter: blur(3px);
+	-moz-filter: blur(3px);
+	-o-filter: blur(3px);
+	-ms-filter: blur(3px);
+	filter: blur(3px);
+	}
+//判断浏览器
+<pre name="code" class="javascript">function getBrowser() {  
+    var ua = window.navigator.userAgent;  
+    var isIE = window.ActiveXObject != undefined && ua.indexOf("MSIE") != -1;  
+    var isFirefox = ua.indexOf("Firefox") != -1;  
+    var isOpera = window.opr != undefined;  
+    var isChrome = ua.indexOf("Chrome") && window.chrome;  
+    var isSafari = ua.indexOf("Safari") != -1 && ua.indexOf("Version") != -1;  
+    if (isIE) {  
+        return "IE";  
+    } else if (isFirefox) {  
+        return "Firefox";  
+    } else if (isOpera) {  
+        return "Opera";  
+    } else if (isChrome) {  
+        return "Chrome";  
+    } else if (isSafari) {  
+        return "Safari";  
+    } else {  
+        return "Unkown";  
+    }  
+}  
+alert(getBrowser());  
