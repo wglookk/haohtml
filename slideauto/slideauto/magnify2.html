@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="jquery-1.8.3.min.js" ></script>
+<script type="text/javascript">
+$(document).ready(function(){
+crashobj($(".base"),$("#objhand"),$(".extend"),4)
+
+////方块区域点下
+//$(".base").mousemove(function(ev){
+//	var pobj = $(".base").offset()
+//	var outobjy = ev.pageY - pobj.left;
+//	var outobjx = ev.pageX - pobj.top;  
+//	var objy = outobjy-50;
+//	var objx = outobjx-50;	  
+//	
+//	
+//	$("#objhand").css("top",objy).css("left",objx);
+//	$(".extend").css("background-position",-objx*4 + "px " + -objy*4 + "px");	
+//	crashtest($(".base"),$("#objhand"),$(".extend"))
+//})
+//
+////滑到区域显示放大器
+//$(".base").hover(function(){
+//	$(".base").find("span.hand").show()
+//	$(".extend").show()
+//},function(){
+//	$(".base").find("span.hand").hide()
+//	$(".extend").hide()
+//})
+////
+
+
+
+})
+/////第一个参数大容器对象，第二参数放大区对象，第三个参数放大器对象
+function crashtest(obig,osmall,obg){
+
+	var obig_w =obig.width();
+	var obig_h =obig.height();
+	var osmall_w =osmall.width();
+	var osmall_h =osmall.height();	
+	var osmall_l = osmall.offset().left;
+	var osmall_t = osmall.offset().top;
+
+	if((obig_w-osmall_w)<osmall_l){
+		osmall.css("left",(obig_w-osmall_w))
+		obg.css("background-position-x",-(obig_w-osmall_w)*4 + "px ");
+	}
+	//如果放大器有白边if中0改8
+	if(8>osmall_l){
+		osmall.css("left",0)
+		obg.css("background-position-x",0);
+	}
+	if((obig_h-osmall_h)<osmall_t){
+		osmall.css("top",(obig_h-osmall_h))
+		obg.css("background-position-y",-(obig_h-osmall_h)*4 + "px ");
+	}
+	//如果放大器有白边if中0改8
+	if(8>osmall_t){
+		osmall.css("top",0)
+		obg.css("background-position-y",0);
+	}
+
+}
+
+
+function crashobj(obig,osmall,obg,nn){
+//方块区域点下
+	obig.mousemove(function(ev){
+		var pobj = obig.offset()
+		var outobjy = ev.pageY - pobj.left;
+		var outobjx = ev.pageX - pobj.top;  
+		var objy = outobjy-(osmall.width()/2);
+		var objx = outobjx-(osmall.height()/2);	
+		
+		
+		osmall.css("top",objy).css("left",objx);
+		//此处nn是n倍放大定位	
+		
+		obg.css("background-position",-objx*nn + "px " + -objy*nn + "px").css("background-size","auto " + nn*obig.width() +"px").css("height",(osmall.height()*nn)+"px").css("width",(osmall.height()*nn)+"px");	
+		
+		console.log(nn*obig.width())
+		
+		crashtest(obig,osmall,obg)
+	})
+	
+	//滑到区域显示放大器
+	obig.hover(function(){
+		osmall.show()
+		obg.show()
+	},function(){
+		osmall.hide()
+		obg.hide()
+	})
+//
+
+}
+
+</script>
+<style>
+.base{width:400px;height:400px;overflow:hidden;background:green;float:left;position:relative;}
+.base span.img{display:block;width:400px;height:400px;background:url(a50.jpg) no-repeat 0 0 / auto 400px;}
+.base span.hand{display:block;width:100px;height:100px;position:absolute;top:0;left:0;cursor:pointer;background:yellow;opacity:0.3;}
+.extend{width:400px;height:400px;border:1px solid #333;float:left;background:url(a50.jpg) no-repeat 0 0 / auto 1600px;}
+</style>
+</head>
+
+<body>
+
+<div class="base">
+	<span class="img"></span>
+	<span class="hand" id="objhand"></span>
+</div>
+
+<div class="extend"></div>
+
+</body>
+</html>

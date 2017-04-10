@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="jquery-1.8.3.min.js" ></script>
+<script type="text/javascript">
+$(document).ready(function(){
+//方块区域点下
+$("#objhand").mousedown(function(ev){
+	
+	var outobjy = ev.pageY;
+	var outobjx = ev.pageX;
+	
+	var pobj = $(".base").offset()
+	
+	var sonobj = $("#objhand").offset();
+	var sonobjx =ev.pageX - sonobj.left;
+	var sonobjy =ev.pageY - sonobj.top
+
+	$(document).mousemove(function(e){	  
+	  var objy = e.pageY-pobj.top-sonobjy;
+	  var objx = e.pageX-pobj.left-sonobjx;	  
+	
+	  
+	  $("#objhand").css("top",objy).css("left",objx);
+	  $(".extend").css("background-position",-objx*4 + "px " + -objy*4 + "px");
+	  
+	  crashtest($(".base"),$("#objhand"),$(".extend"))
+	  $("span.number").text("X: " + e.pageX + ", Y: " + e.pageY);
+	  $("span.number2").text("x:" + objx + "y:" + objy)
+	  $("span.number3").text("x:" + pobj.left + "y:" + pobj.top)
+	  $("span.number4").text("x:" + (e.pageX-pobj.left) + "y:" + (e.pageY-pobj.top))
+	});
+
+
+})
+//方块区域抬起
+$("#objhand").mouseup(function(){
+	$(document).unbind()
+})
+//
+$(".base").hover(function(){
+	$(".base").find("span.hand").show()
+	$(".extend").show()
+},function(){
+	$(".base").find("span.hand").hide()
+	$(".extend").hide()
+})
+//
+})
+
+function crashtest(obig,osmall,obg){
+
+var obig_w =obig.width();
+var obig_h =obig.height();
+var osmall_w =osmall.width();
+var osmall_h =osmall.height();
+
+var osmall_l = osmall.offset().left;
+var osmall_t = osmall.offset().top;
+
+if((obig_w-osmall_w)<osmall_l){
+	osmall.css("left",(obig_w-osmall_w))
+	obg.css("background-position-x",-(obig_w-osmall_w)*4 + "px ");
+}
+
+console.log((obig_w-osmall_w)+" | "+osmall_l)
+
+if(0>osmall_l){
+	osmall.css("left",0)
+	obg.css("background-position-x",0);
+}
+if((obig_h-osmall_h)<osmall_t){
+	osmall.css("top",(obig_h-osmall_h))
+	obg.css("background-position-y",-(obig_h-osmall_h)*4 + "px ");
+}
+if(0>osmall_t){
+	osmall.css("top",0)
+	obg.css("background-position-y",0);
+}
+
+
+}
+
+</script>
+<style>
+.base{width:400px;height:400px;overflow:hidden;background:green;float:left;position:relative;}
+.base span.img{display:block;width:400px;height:400px;background:url(a50.jpg) no-repeat 0 0 / auto 400px;}
+.base span.hand{display:block;width:100px;height:100px;position:absolute;top:0;left:0;cursor:pointer;background:yellow;opacity:0.3;display:none;}
+.extend{width:400px;height:400px;border:1px solid #333;float:left;background:url(a50.jpg) no-repeat 0 0 / auto 1600px;display:none;}
+</style>
+</head>
+
+<body>
+
+<div class="base">
+	<span class="img"></span>
+	<span class="hand" id="objhand"></span>
+</div>
+
+<div class="extend">
+	<span class="number"></span><br>
+	<span class="number2"></span><br>
+	<span class="number3"></span><br>
+	<span class="number4"></span><br>
+
+</div>
+
+</body>
+</html>

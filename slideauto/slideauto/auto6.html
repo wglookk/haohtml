@@ -1,0 +1,129 @@
+<!DOCTYPE>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/form.css" type="text/css" rel="stylesheet" />
+<title>abc</title>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<script>
+/////////自动
+$(window).resize(function(){
+	slideauto($("#simpleone"))
+	slideauto($("#simpletwo"))
+});
+/////////加载完成运行
+$(document).ready(function(){
+	slideauto($("#simpleone"))
+	slideauto($("#simpletwo"))
+});
+function slideauto(obj){
+//对象赋值
+	var linum = obj.find(".admin").find("li").size();
+	var liup = 1;
+	var objslidecon = obj.find(".objslidecon").width()
+	
+	obj.find(".admin").width(linum*objslidecon)
+	obj.find(".admin").find("li").css("left",objslidecon*2).hide()
+	obj.find(".admin").find("li:eq(0)").css("left",0).show()
+	obj.find(".admin").find("li:eq(1)").css("left",objslidecon).show()
+	
+	
+	var htmllast = obj.find(".admin").find("li:eq(0)").css("left",0).prop("outerHTML")
+	obj.find(".guest").html(htmllast)
+	//箭头高
+	var arrautoh = (obj.height() - obj.find(".objslideconarr").height())/2
+	obj.find(".objslideconarr").css("top",arrautoh)
+
+
+//左箭头
+	obj.find(".objslideconarr").find(".lefta").click(function(){	
+	
+		var objfirst = obj.find(".admin").find("li:eq("+(linum-1)+")").css("left",-objslidecon);
+		obj.find(".admin").prepend(objfirst)	
+		obj.find(".admin").find("li:eq(0)").show().stop(true).animate({left:0});
+		obj.find(".admin").find("li:eq(1)").show().stop(true).animate({left:objslidecon});
+		obj.find(".admin").find("li:eq(2)").hide().stop(true).animate({left:objslidecon*2});
+		//当前页报数
+		if(liup > 1){
+		liup = liup - 1;
+		}else{
+		liup = linum;
+		}
+		console.log(liup)
+	})
+//右箭头
+	obj.find(".objslideconarr").find(".righta").click(function(){
+		var htmllast = obj.find(".admin").find("li:eq(0)").css("left",0).prop("outerHTML")
+		obj.find(".guest").html(htmllast)		
+		obj.find(".admin").find("li:eq(0)").show().stop(true).animate({left:-objslidecon});
+		obj.find(".admin").find("li:eq(1)").show().stop(true).animate({left:0});
+		obj.find(".admin").find("li:eq(2)").show().stop(true).animate({left:objslidecon});
+		obj.find(".guest").find("li:eq(0)").show().stop(true).animate({left:-objslidecon});
+		var htmllastadmin = obj.find(".admin").find("li:eq(0)").css("left",objslidecon*2).prop("outerHTML")		
+		obj.find(".admin").append(htmllastadmin)
+		obj.find(".admin").find("li:eq(0)").remove()
+		//当前页报数
+		if(liup < linum){
+		liup = liup + 1;
+		}else{
+		liup = 1;
+		}
+		console.log(liup)
+		
+	})
+
+}
+
+
+//////
+</script>
+<style>
+ul,li{margin:0;padding:0;list-style-type:none;}
+.objslide{position:relative;}
+.objslide .objslidecon{position:relative;width:100%;height:200px;overflow:hidden;}
+.objslide .objslidecon ul{position:absolute;display:block;background:red;top:0;}
+.objslide .objslidecon ul.admin{z-index:2}
+.objslide .objslidecon ul.guest{z-index:1;width:200%;}
+.objslide .objslidecon ul li{position:absolute;display:none;width:100%;background:yellow;}
+.objslide .objslideconarr{position:absolute;top:0;width:100%;}
+.objslide .objslideconarr span{display:block;width:80px;height:80px;line-height:80px;text-align:center;color:#FFFFFF;background:#000;opacity:0.5;}
+.objslide .objslideconarr span.lefta{float:left;}
+.objslide .objslideconarr span.righta{float:right;}
+</style>
+</head>
+
+<body>
+<div class="objslide" id="simpleone">
+	<div class="objslidecon">
+		<ul class="admin">
+		<li>111111111111111111111111</li>
+		<li>222222222222222222222222222222222222</li>
+		<li>33</li>
+		<li>44</li>
+		<li>55</li>
+		</ul>
+		<ul class="guest"></ul>
+	</div>
+	<div class="objslideconarr">
+		<span class="lefta" > < </span>
+		<span class="righta" > > </span>
+	</div>
+</div>
+
+<div class="objslide" id="simpletwo">
+	<div class="objslidecon">
+		<ul class="admin">
+		<li>111111111111111111111111</li>
+		<li>222222222222222222222222222222222222</li>
+		<li>33</li>
+		<li>44</li>
+		</ul>
+		<ul class="guest"></ul>
+	</div>
+	<div class="objslideconarr">
+		<span class="lefta" > < </span>
+		<span class="righta" > > </span>
+	</div>
+</div>
+</body>
+</html>

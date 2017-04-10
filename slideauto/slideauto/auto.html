@@ -1,0 +1,96 @@
+<!DOCTYPE>
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/form.css" type="text/css" rel="stylesheet" />
+<title>abc</title>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<script>
+/////////加载完成运行
+$(document).ready(function(){
+//对象赋值
+	var linum = $("#ulobj").find("li").size()
+	var objslidecon = $(".objslidecon").width()
+	
+	$("#ulobj").width(linum*objslidecon)
+	$("#ulobj").find("li").css("left",objslidecon*2).hide()
+	$("#ulobj").find("li:eq(0)").css("left",0).show()
+	$("#ulobj").find("li:eq(1)").css("left",objslidecon).show()
+	
+	
+	var htmllast = $("#ulobj").find("li:eq(0)").css("left",0).prop("outerHTML")
+	$("#ulobjss").html(htmllast)
+
+console.log(linum)
+
+//
+	$("#objslideconarr_left").click(function(){
+	
+	
+		var objfirst = $("#ulobj").find("li:eq("+(linum-1)+")").css("left",-objslidecon);
+		$("#ulobj").prepend(objfirst)
+	
+		$("#ulobj").find("li:eq(0)").show().stop(true).animate({left:0});
+		$("#ulobj").find("li:eq(1)").show().stop(true).animate({left:objslidecon});
+		$("#ulobj").find("li:eq(2)").hide().stop(true).animate({left:objslidecon*2});
+		
+		
+		
+	})
+	
+	$("#objslideconarr_right").click(function(){
+		var htmllast = $("#ulobj").find("li:eq(0)").css("left",0).prop("outerHTML")
+		$("#ulobjss").html(htmllast)
+		
+		$("#ulobj").find("li:eq(0)").show().stop(true).animate({left:-objslidecon});
+		$("#ulobj").find("li:eq(1)").show().stop(true).animate({left:0});
+		$("#ulobj").find("li:eq(2)").show().stop(true).animate({left:objslidecon});
+		$("#ulobjss").find("li:eq(0)").show().stop(true).animate({left:-objslidecon});
+		var htmllastadmin = $("#ulobj").find("li:eq(0)").css("left",objslidecon*2).prop("outerHTML")		
+		$("#ulobj").append(htmllastadmin)
+		$("#ulobj").find("li:eq(0)").remove()
+		//setTimeout(,500)
+		
+		//var objlast = $("#ulobj").find("li:eq(0)").css("display","none").css("left",-objslidecon*2);
+
+		//$("#ulobj").append(objlast)
+		
+		
+	})
+
+
+});
+
+//////
+</script>
+<style>
+ul,li{margin:0;padding:0;list-style-type:none;}
+.objslide{}
+.objslide .objslidecon{position:relative;width:100%;height:500px;overflow:hidden;}
+.objslide .objslidecon ul{position:absolute;display:block;background:red;top:0;}
+.objslide .objslidecon ul.admin{z-index:2}
+.objslide .objslidecon ul.guest{z-index:1}
+.objslide .objslidecon ul li{position:absolute;display:none;width:100%;background:yellow;}
+.objslide .objslideconarr{position:absolute;top:0;width:100%;}
+.objslide .objslideconarr span{display:block;width:80px;height:80px;line-height:80px;text-align:center;color:#FFFFFF;background:#000;opacity:0.5;}
+.objslide .objslideconarr span.lefta{float:left;}
+.objslide .objslideconarr span.righta{float:right;}
+</style>
+</head>
+
+<body>
+<div class="objslide">
+	<div class="objslidecon">
+		<ul id="ulobj" class="admin">
+		<li>111111111111111111111111</li>
+		<li>222222222222222222222222222222222222</li>
+		</ul>
+		<ul id="ulobjss" class="guest"></ul>
+	</div>
+	<div class="objslideconarr">
+		<span class="lefta" id="objslideconarr_left"> < </span>
+		<span class="righta" id="objslideconarr_right"> > </span>
+	</div>
+</div>
+</body>
+</html>

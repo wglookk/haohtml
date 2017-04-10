@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+predictslide($("#predictone"))
+});
+
+
+function predictslide(obj){
+var num = obj.width()
+var objw = num-obj.find(".predictconobj").width()
+var nn = 0
+//左击
+	obj.find(".lefts").click(function(){
+		var innum = parseInt(obj.find(".predictconobj").css("left"))
+				
+		if(innum<0){
+			if(nn<0){
+			nn = nn+1;
+			}else{
+			nn = 0;
+			}		
+			
+			obj.find(".predictconobj").animate({left:num*nn});
+		
+			if(objw<innum){
+			$(this).parents(".predictarr").find("span").show();
+			$(this).hide();		
+			}else{
+			$(this).parents(".predictarr").find("span").show();
+			}
+		
+		}
+	})
+//右击
+	obj.find(".rights").click(function(){
+		var innum = parseInt(obj.find(".predictconobj").css("left"))
+		
+		
+		if(objw<innum){
+			if(nn<(-2)){
+			nn = -2;
+			}else{
+			nn = nn-1;
+			}
+	
+			obj.find(".predictconobj").stop(true).animate({left:num*nn});
+		
+			if((num+objw)>innum){
+			$(this).parents(".predictarr").find("span").show();
+			$(this).hide();				
+			}else{
+			$(this).parents(".predictarr").find("span").show();
+			}
+		
+		}
+	})
+}
+</script>
+<style type="text/css">
+.predict{width:500px;position:relative;}
+.predict .predictarr{width:100%;position:absolute;z-index:2;}
+.predict .predictarr span{display:block;width:30px;height:30px;background:#000;opacity:0.5;color:#FFFFFF;}
+.predict .predictarr span.lefts{float:left;}
+.predict .predictarr span.rights{float:right;}
+.predict .predictcon{width:100%;height:400px;position:relative;}
+.predictconobj{width:1100px;height:50px;background:yellow;position:absolute;top:0;left:0;}
+</style>
+</head>
+
+<body>
+<div class="predict" id="predictone">
+
+	<div class="predictarr">
+		<span class="lefts"> < </span>
+		<span class="rights"> > </span>
+	</div>
+
+	<div class="predictcon">
+	
+		<div class="predictconobj">1111111111111222222222222</div>
+	
+	</div>
+
+</div>
+</body>
+</html>

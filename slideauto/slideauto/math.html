@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+.mathall{position:relative;margin:200px 0 0 0px;}
+.math{width:30px;height:30px;background:yellow;position:absolute;top:0;left:0;}
+.mathover{width:30px;height:30px;background:green;position:absolute;top:400px;left:300px;}
+</style>
+<script src="jquery-1.8.3.min.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+<div class="mathall" id="mathalls">
+<div class="math"></div>
+<div class="mathover"></div>
+</div>
+<button id="butt">www</button>
+<script type="text/javascript">
+var i = 1;
+//var q,k,t,y,x;
+//function matha(yv,xv){
+//i = i+1;
+//	
+//	q = Math.tan(i*0.01)
+//	//z = Math.sin(y)
+//	k = 100/377.75
+//	y = q*q*q*k
+//	t = 100/155.74
+//	x = q*t
+//	console.log(y)
+//	$(".math").css("top",(y*yv)+"px" ).css("left",(x*xv)+"px" )
+//	//}
+//
+//if(i>99){
+//clearInterval(intervalId)
+//}
+//}
+//matha()
+//var intervalId = setInterval('matha(400,300)',10)
+/////////////////////////////////////////////////////////////==============
+//var i,j,q,x,y;
+//function mathp(yv,xv){
+//i = i+1;
+//j = -50 + i;
+////ax²+bx+c=y
+//q = j*0.3*Math.pow(i,0.5) + 0.1*i*j;
+//x = i/101;
+//y = q/668;
+//
+//	console.log(x +"|"+ y)
+//	if(i>100){
+//	clearInterval(intervalId)
+//	}
+//$(".math").css("top",y*yv+"px" ).css("left",x*xv+"px" )
+//}
+//
+//
+//var intervalId = setInterval('mathp(400,300)',11)
+//////////////////==============================================================
+
+var i,j,q,x,y,intervalId,yval,xval;
+function mathp(yval,xval){
+
+i = i+1;
+j = -50 + i;
+//ax²+bx+c=y
+q = j*0.3*Math.pow(i,0.5) + 0.1*i*j;
+x = i/101;
+y = q/668;
+//$(".math").css("top",y*yv+"px" ).css("left",x*xv+"px" )
+
+
+	$(".math").css("top",y*yval+"px" ).css("left",x*xval+"px" )
+	//console.log(x +"|"+ y)
+	if(i>100){
+	clearInterval(intervalId)
+	i = 0;
+	}
+
+}
+
+
+$("#butt").click(function(){
+yval = 400;
+xval = 300;
+intervalId = setInterval('mathp(yval,xval)',8)
+
+})
+
+</script>
+</body>
+</html>
