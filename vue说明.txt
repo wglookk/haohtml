@@ -1,0 +1,26 @@
+准备环境铺垫
+1. git  -   git bash here  比cmd定位准确
+
+2. node.js 官方地址https://nodejs.org/en/download/  最好不安装系统盘里
+
+3. cnpm 淘宝镜像
+   命令 cnpm install -g  cnpm --registry=https://registry.npm.taobao.org 
+-------------
+VUE准备
+4. 全局vue-cli手脚架
+
+   命令 cnpm install -g vue-cli
+   命令 vue 有信息成功！
+
+5. 建立目录
+   命令 vue init webpack my-vue
+
+6. 默认回车键 会发现又多了一个文件夹
+   解决 可以进入也可以删除
+
+7. 把手脚架跑一下 cnpm install 完成会多一个node_modules文件夹
+
+8. 执行下 cnpm run dev  恭喜你成功！（如果不成功重新下载最新node重装）
+
+
+
