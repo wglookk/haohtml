@@ -1,0 +1,49 @@
+cnpm install webpack -g 全局webpack
+
+webpack runoob1.js bundle.js 纯净的编译语法
+
+cnpm install css-loader style-loader 加入loader css style的包
+
+require("!style!css!./style.css"); 引用文件，注意webpack2需要写成
+require("!style-loader!css-loader!./style.css");
+
+webpack配置文件
+entry:输入 output:输出 module: loader模块
+
+cnpm install webpack --save-dev装载当前环境DEV
+
+module.exports 类接口
+
+
+-------------
+装ES6
+新建文件名为.balbelrc
+{
+  "presets": [],
+  "plugins": []
+}
+  {
+    "presets": [
+      "es2015",
+      "react",
+      "stage-2"
+    ],
+    "plugins": []
+  }
+npm install --save-dev babel-preset-es2015
+
+npm install --save-dev babel-cli
+
+改写package.json
+
+{
+  // ...
+  "devDependencies": {
+    "babel-cli": "^6.0.0"
+  },
+  "scripts": {
+    "build": "babel src -d lib"
+  },
+}
+
+--------------------
