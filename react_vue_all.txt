@@ -1,0 +1,32 @@
+redux-------------
+
+store.subscribe()监听器
+store.dispatch({type:'改类型'}) 改变类型-----action.type
+store.getState()  获取state
+ 
+
+router 4----------------------
+http://618cj.com/react-router4-0%E8%B7%AF%E7%94%B1%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3api/
+
+
+===============================
+事件控制监听
+redux 用action(dispatch)控制的是state
+路由监听
+router
+可以理解为组件，每个页面组件为变量 
+<Route path="/about" component={About}/>
+react
+可以理解为7+2+1
+componentWillMount componentWillUnmount componentWillUpdate componentWillReceiveProps
+componentDidMount componentDidUpdate shouldComponentUpdate
+state props 
+refs
+================================
+vue
+结构清晰，模板（template）注意里面的DIV， 脚本（script）,样式（style）
+router
+就是一个配置数组，挂在vue上
+vuex
+可以理解为就一个store对象，依然挂在vue上
+==================================
