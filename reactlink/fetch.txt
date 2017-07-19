@@ -1,0 +1,56 @@
+ie8基于es3 ie9支持大部分es5 ie11少量支持es5 ie10支持比较完整
+
+es5的 polyfill  -  es5-shim,es5-sham
+Promisse的 polyfill  -  es6-promise
+fetch的 polyfill  -  fetch-ie8
+依次装包
+
+---------------
+
+get  2017
+
+
+===============
+Apache 设置允许跨域
+http://blog.csdn.net/nlwangxin/article/details/46681299
+
+把LoadModule headers_module modules/mod_headers.so 前面的注释删除
+
+Header set Access-Control-Allow-Origin *
+<Directory />
+    AllowOverride none
+    Require all granted
+    Header set Access-Control-Allow-Origin *
+</Directory> 
+
+
+----
+https://segmentfault.com/a/1190000007019545
+属性：
+status (number) - HTTP请求结果参数，在100–599 范围
+statusText (String) - 服务器返回的状态报告
+ok (boolean) - 如果返回200表示请求成功则为true
+headers (Headers) - 返回头部信息，下面详细介绍
+url (String) - 请求的地址
+
+方法：
+text() - 以string的形式生成请求text
+json() - 生成JSON.parse(responseText)的结果
+blob() - 生成一个Blob
+arrayBuffer() - 生成一个ArrayBuffer
+formData() - 生成格式化的数据，可用于其他的请求
+
+其他方法：
+clone()
+Response.error()
+Response.redirect()
+
+---
+same-origin：该模式是不允许跨域的，它需要遵守同源策略，否则浏览器会返回一个error告知不能跨域；其对应的response type为basic。
+
+cors: 该模式支持跨域请求，顾名思义它是以CORS的形式跨域；当然该模式也可以同域请求不需要后端额外的CORS支持；其对应的response type为cors。
+
+no-cors: 该模式用于跨域请求但是服务器不带CORS响应头，也就是服务端不支持CORS；这也是fetch的特殊跨域请求方式；其对应的response type为opaque。
+
+json解析
+json.parse() eval()
