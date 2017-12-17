@@ -1,6 +1,9 @@
 （一）TortoiseGit的key配置方法：
-[建KEY]
-在“开始”菜单，选择“TortoiseGit >PuttyGen”>Generate   >save private key
+[引KEY]
+在“开始”菜单 > TortoiseGit > PuttyGen > Load（选择id_rsa） > Save private key
+
+或者 [建KEY]
+在“开始”菜单 > TortoiseGit > PuttyGen > Generate > save private key
 [建仓库]
 在新建文件夹 > git 在这里创建版本库
 设置 > GIT > 
