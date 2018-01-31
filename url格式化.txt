@@ -1,0 +1,28 @@
+指定是“id”的打印
+var hostv = location.search.split('?')[1]
+var hostvarr = hostv.split('&')
+var hostlast = []
+for(var i = 0;i<hostvarr.length;i++){
+             var temp = hostvarr[i].split('=');
+			 if(temp[0]=="id"){
+			 console.log(temp[1])
+			 }
+			// console.log(temp[0])
+			//hostlast.push(temp)
+			 
+            
+         }
+
+打印？后的参数
+
+//?userid=5551&Roomid=6661&role=1
+var hostv = location.search.split('?')[1]
+var hostvarr = hostv.split('&')
+var hostlast = []
+for(var i = 0;i<hostvarr.length;i++){
+             var temp = hostvarr[i].split('=');
+			hostlast.push(temp)
+			 
+            
+         }
+console.log(hostlast[0][1])
