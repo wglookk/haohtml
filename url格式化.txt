@@ -26,3 +26,10 @@ for(var i = 0;i<hostvarr.length;i++){
             
          }
 console.log(hostlast[0][1])
+
+
+//¸ñÊ½»¯×Ö·û´®
+function strformat(s){
+	var nn = s.lastIndexOf(".");
+	return s.substring(0,nn);
+}
