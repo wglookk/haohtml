@@ -2,3 +2,40 @@
 要注入的JSON数据结构也一样的，只是不需要的节点数据为空。
 
 每个页面初次渲染都是服务器渲染HTML
+
+
+--------------------------------------------------------
+https://www.jb51.net/article/133443.htm
+webpack-bundle-analyzer
+
+
+npm install --save-dev webpack-bundle-analyzer
+
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+module.exports = {
+  plugins: [
+    new BundleAnalyzerPlugin()
+  ]
+}
+===========
+Dva  -> redux  + router (fetch)
+===========
+roadhog ->webpack的封装 简化版
+-----------------------------------------
+umi -> roadhog + react + router
+==========================
+
+---------------显示 view -------------
+组件 DOM 展示 木偶组件 智能组件 HTML CSS
+
+--------------数据流 data -----------
+API 接口 请求数据 异步 调用数据
+
+--------------数据处理----------------
+数据处理  功能开发 逻辑处理 
+
+
+路由 打包工具 router webpack gulp  roadhog(webpack的封装)
+
+
