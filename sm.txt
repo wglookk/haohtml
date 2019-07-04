@@ -1,0 +1,310 @@
+VPN  Kf6InWGL
+WIFI:MapleCloudy  /  ncfjhcca // rsjxfyyyzf2018
+
+
+http://mc.ali.szol.bds.com:18888/hive
+maplecloudy //rsjxfyyyzf2018
+
+
+wugl@maplecloudy.com
+=========
+http://demo.maplecloudy.com:8080/zentao/user-login-L3plbnRhby9teS1wcm9maWxlLmh0bWw=.html
+wugl
+rsjxfyyyzf2018
+
+jira BUG管理 禅道
+log 
+
+workflow  连线
+
+---------------------------------------------g6 
+https://www.yuque.com/antv/f2/api-index
+
+
+https://www.yuque.com/antv/g6/intro
+
+----------------------------------------------------webpack
+webpack-bundle-analyzer 
+https://www.jb51.net/article/133443.htm
+
+------------------04/29---
+app list 建文件夹
+cronTrigger  根据status 分TAB
+cronTrigger 分页
+
+
+filter
+刷新
+
+----------------------05/09--
+log 左右翻顺序调整
+inputs 参数
+workflow  inputs 类型选择
+inputs 参数 类型校验、
+apps list filter
+
+
+log 翻出去处理 限制
+
+-------------------05/10--
+app manager 首次刷新
+log 刷新
+修改 ace 编辑器
+
+
+ace 编辑器 g6编辑器
+
+---------------------05/13-----
+
+国际化 （语言变量）
+提示消息
+
+
+
+
+ext-language_tools
+
+------------------------05/14----
+
+log 默认字长适度充满一页
+logEngine 修改
+hive 左侧数据库列表属性展示
+------------------------05/16----
+
+http://localhost:8000/api/pipelines/crons/stop/Cluster%201?id=90&sudo=maple
+
+schedule/active/Cluster%201?size=10&page=0&sudo=maple
+/api/pipelines/crons
+
+/stop/{clusterName}/{id}
+
+
+fetchCronTrigger
+
+
+http://localhost:8000/api/pipelines/crons/stop/Cluster%201/90?sudo=maple
+
+http://localhost:8000/api/hdfs/httpfs/Cluster 1/user/maple/123aaaa?op=CREATE&data=true&user.name=maple&sudo=maple
+
+http://localhost:8087/api/hdfs/httpfs/Cluster%201/user/maple/test/111?op=CREATE&data=true&user.name=maple&sudo=maple
+
+
+------------------------05/17----
+workflow  filter 刷新筛选
+运行时禁止stop 添加提示
+调试workflow 连线
+
+
+------------------------05/20----
+hive 左侧数据库属性展示
+
+hive ace编辑器 自定义提示
+
+@GetMapping("/{clusterName}/{databaseName}/keyword")  获取所有字段名称
+@GetMapping("/{clusterName}/{databaseName}/{tableName}/info") 获取单个表信息
+@GetMapping("/{clusterName}/{databaseName}/info") 获取数据库属性信息
+ 公共开头：@RequestMapping("/api/hive")
+
+http://localhost:8000/api/hive/Cluster%201/maplecloudy/info?sudo=maple
+http://localhost:8000/api/hive/Cluster%201/maplecloudy/month_active/info?sudo=maple
+http://localhost:8000/api/hive/Cluster%201/tmp_mapp/tmp_mapp_380673813756014592?sudo=maple
+
+
+------------------------05/21----
+https://www.cnblogs.com/zhongxia/p/5650199.html
+hive 左侧数据库属性展示 接口
+hive ace编辑器 自定义提示 接口数据处理
+
+workflow 拷贝
+ace编辑器自定义list提示插入
+
+hive 左侧数据库属性展示方式调整
+hive 左侧数据库更多展示
+
+
+== "owner": "maple",
+== "createTime": 1557124572,（转）
+ "sd": { 
+====  "location": "hdfs://nameservice1/user/hive/warehouse/day_active-__PLACEHOLDER__",     
+        "serdeInfo": {
+            "parameters": {
+==== "path": "hdfs://nameservice1/user/maple/stat_test/game/day_active",        
+            },            
+        },
+ "partitionKeys": [
+        {
+            "name": "logdate",
+            "type": "string",
+        }，
+    ],
+ "parameters": {
+=== "EXTERNAL": "TRUE",       
+=== "spark.sql.sources.provider": "json",
+==="spark.sql.create.version": "2.3.0-maple-SNAPSHOT"
+    },
+
+
+ @GetMapping("/{clusterName}/{databaseName}/{tableName}/columns")
+@RequestMapping("/api/hive")
+http://localhost:8000/api/hive/Cluster%201/default/day_active/columns?sudo=maple
+http://localhost:8000/api/hive/Cluster%201/default/day_active/info?sudo=maple
+
+ReactJson
+
+------------------------05/22----
+
+hive ace编辑器 自定义提示 接口数据处理
+workflow 拷贝
+
+ace编辑器自定义list提示插入
+http://localhost:8000/api/hive/Cluster%201/maplecloudy/keyword?sudo=maple
+
+Tunnello VPN
+
+------------------------05/23----
+
+log 去掉上下箭头
+workflow inputs添加default
+hive ace编辑器 自定义提示
+hive 展示样式
+
+-----------------------05/24----
+location.pathname
+切换集群 或 账户  要刷新
+
+切换集群 账户 projects 下的code build 中的select内容记录到 localStorage中
+
+require全局的消息类型处理，消息没关闭按钮
+
+APP设置 弹框点击外面不关闭
+
+app manager stop加loading
+
+-----------------------05/27----
+
+router 刷新
+context
+切换集群 账户 projects 下的code build 中的select内容记录到 localStorage中
+require全局的消息类型处理，消息没关闭按钮
+APP设置 弹框点击外面不关闭
+router 的刷新
+
+
+Ace编辑器 切换清空
+workflow 线的点选
+
+
+
+dispatch({
+      type: 'hive/savePanes',
+      payload: {
+        panes,
+      }
+    })
+-----------------------05/28----
+
+
+import moment from 'moment';
+
+{moment(record.norminalTime).format('YYYY/MM/DD/ HH:mm')}
+
+
+
+ant-calendar-time-picker-column-3 ant-calendar-time-picker-inner
+ant-calendar-time-picker-column-3 ant-calendar-time-picker-inner
+
+7fd63901e70934fad49943a3c3ad8ec5  699214
+-----------------------05/30----
+
+1app list 删除
+2workflow 工作流 copy
+3app list 右键读取说明文档 MD
+4workflow 加载改loading转圈
+5中英文切换
+6workflow 边距调整去留白
+
+import groupBy from 'lodash/groupBy';
+
+-----------------------05/31----
+
+fileSuffix
+
+
+http://localhost:8000/api/hdfs/httpfs/Cluster%201/user/maple/maplecloudy/apps/com-maplecloudy-app/maplecloudy-spark-hive/1.0-SNAPSHOT?op=OPEN&offset=0&length=4096&sudo=maple
+
+http://localhost:8000/api/hdfs/httpfs/Cluster%201/user/maple/maplecloudy/apps/com-lenovo-uds/lenovo-warehouse-dataclean/0.1.0-SNAPSHOT/icon.png?op=OPEN&offset=0&length=&sudo=maple
+
+
+
+
+1.app list 显示为分类文件形式
+2.分类文件夹 右键跳转到所在位置
+3.分类文件夹 数据拼装
+4.app list File组件
+
+
+fetchDesktopApps
+fetchAppsHdfs
+fetchHdfsList
+
+-----------------------------------6/11------------
+hive 
+readme 样式调整
+
+
+
+
+page
+UNREACH,
+  CREATED,
+  STARTED, 
+  FAILED, 
+  CANCELLED, 
+  COMPLETED
+
+
+
+=========6/24========
+国际化
+
+登录报错页面
+
+live 展开list 高度100%
+
+live 文本右侧的线去掉
+
+design id名字不允许修改
+----------------6/25--------------
+国际化
+请求信息异常处理
+缩放
+
+-----------------6/27-----------------
+1.workflow action 添加timeout属性
+2.国际化公共引用方法调整
+3.header模块国际化完成
+-------------------07/01--------------------
+
+console.log(navigator.language)
+
+console.log(navigator.userLanguage)
+
+console.log(navigator.browserLanguage)
+
+console.log(navigator.systemLanguage)
+
+1workflow outtime修改变量名
+2workflow list翻页异常
+3登录时服务端异常，提示并且跳回登录页
+4hive file下的高度
+==========================
+router  redux  webpack api
+ -- 路由node  
+url.parse.query
+url.parse.pathname
+
+ -- redux 
+
+
+
+
