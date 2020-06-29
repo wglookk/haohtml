@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>CSS3实现跑马灯效果</title>
+        <style>
+		.marqueecon p{padding:0;margin:0; white-space:nowrap}
+            .marqueecon div.list {
+                display: block;
+                width: 100%;
+				min-width:400px;
+                overflow: hidden;                
+            }
+			.listcontent{width:200%;position:relative;
+			-webkit-animation: marquee 15s linear infinite;
+                animation: marquee 15s linear infinite;
+			}
+			.child{width:50%;position:relative;left:0;top:0;background:green;}
+			.childlast{width:50%;position:absolute;left:50%;top:0;background:red;}
+            
+            @keyframes marquee {
+                0% {
+                    transform: translateX(195);
+                }
+                100% {
+                    transform: translateX(-50%); // 每行高50
+                }
+            }
+        </style>
+        <script>
+        </script>
+    </head>
+
+    <body>
+        <div class="marqueecon">
+			<div class="list">
+			<div class="listcontent">
+					<div class="child">
+						<p>让我掉下眼泪的 不止昨夜的酒</p>
+						<p>让我依依不舍的 不止你的温柔</p>
+					</div>
+					<div class="childlast">
+						<p>让我掉下眼泪的 不止昨夜的酒</p>
+						<p>让我依依不舍的 不止你的温柔</p>
+					</div>
+				</div>
+			</div>
+        </div>
+		
+    </body>
+
+</html>
