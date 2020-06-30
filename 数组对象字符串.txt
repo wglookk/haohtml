@@ -1,38 +1,81 @@
------------------数组 Array-------------------------------------------
+﻿-----------------数组 Array-------------------------------------------
 增删
 push 添加到数组到最后一位 返回处理后的长度
 pop  删除数组最后一位  返回处理后的最后一位
 unshift 添加到数组的第一位 返回处理后的长度
 shift 删除第一位 返回处理后的第一位
 splice 第几位 ， 删几个 ，插入值  返回删除的值
-
+concat 合并值返回合并结果 （不改变原数组对象）
 改
 reverse 颠倒 无返回，操作原数组
-concat 合并值返回合并结果 （不改变原数组对象）
 join() 数组转字符串 （不改变原数组对象）
 slice() 截取数组 结果也是数组（不改变原数组对象）
 sort 排序 无返回，操作原数组
 toString() 数组转字符串 （不改变原数组对象）
-
 查
 filter 筛选 返回筛选结果 （不改变原数组对象）全遍历 不对空数组处理
 forEach 筛选 返回undefined （不改变原数组对象）全遍历 对空数组处理返回undefined
 map 筛选 返回筛选状态 （不改变原数组对象）全遍历 不对空数组处理
 reduce（fn(累加值，值，键，当前数组) ,初始值）空数组会报错 （es3）
 reduceRight （fn(累加值，值，键，当前数组) ,初始值）空数组会报错 （es3）从后向前运算
-some  筛选 返回筛选状态 （不改变原数组对象）全遍历 不对空数组处理 （一旦有满足条件就不在遍历）
+some  筛选 返回筛选状态 （不改变原数组对象）全遍历 不对空数组处理（空数组返回false） （一旦有满足条件就不在遍历 返回TRUE）
+every  筛选 返回筛选状态 （不改变原数组对象）全遍历 不对空数组处理（空数组返回TRUE） （一旦有不满足条件就不在遍历 返回false）
 indexOf 数组是否包含值 区分类型 返回下标key 没有返回-1
 lastIndexOf 数组是否包含值 区分类型 返回下标key 没有返回-1
 Array.isArray  判断是数组返回TRUE 其他false （es5）
+valueOf 原始值待研究
 ------------------es6---------
-copyWithin
-entries
-fill 覆盖数组的值 长度不变
-every
+copyWithin（第几位开始，复制内容第几位开始） 改变原数组（不处理空数组）
+fill 覆盖数组的值 长度不变['val','val','val','val','val'] 改变原数组 （不处理空数组）
+includes 数组是否包含一个值 区分类型 返回 TRUE false
 find 筛选一次 返回筛选结果（不改变原数组对象） 只执行一次 对空数组处理返回undefined
 findIndex 筛选一次 返回筛选结果位置（不改变原数组对象） 只执行一次  对空数组处理返回 -1
 Array.from 筛选 返回筛选状态 （不改变原数组对象）全遍历 不对空数组处理
-includes 数组是否包含一个值 区分类型 返回 TRUE false
-keys().next()  key下标对象 next是步长 含下一个步长为TRUE  无为false
+entries().next() 值对象 next是步长 含下一个步长为done TRUE后面有值  无为false 后面有值
+keys().next()  key下标对象 next是步长 含下一个步长为done TRUE后面有值  无为false 后面有值
 
+-----------------字符串String-------------------------------------------
+增删
+concat 字符串合并（不改变原始值）
+slice 截取字符串 （不改变原始值）
+trim 去掉前后空格（不改变原始值）
+substr（第几位，截取长度）
+substring（开始位置，结束位置）不可以取负数 
+repeat（2） 复制字符串 2次
+改
+String.fromCharCode(65)  Unicode 编码 转换为字符
+toLowerCase 字符串转换为小写
+toUpperCase 字符串转换为大写
+toLocaleLowerCase转换为小写
+toLocaleUpperCase转换为大写
+split 字符串分割成数组
+match（正则） 查找匹配所有值 放入数组返回，没有返回null
+replace（目标【或正则】，值）查找替换
+查
+charAt（2） 查找第2位的字符串 （从0开始实际是第三个） 
+charCodeAt(2)  查找第2位的字符串的Unicode 编码 ，空返回NaN
+indexOf 查找字符的第几位下标  没有找到返回 -1
+lastIndexOf 查找字符的第几位下标 从后开始查找  没有找到返回 -1
+search （目标【或正则】）查找返回第几位下标值
+valueOf 原始值待研究
+toString 转字符串
+------------es6---------------
+includes 查找字符是否存在 存在返回true  不存在 false
+startsWith 开头匹配字符 有返回TRUE 无返回false
 -----------------对象Object-------------------------------------------
+
+new Set() 去重对象
+new Map() 键值对对象 键可以为任意值对象
+Symbol() 唯一 Symbol类型
+proxy
+promise
+async
+
+
+
+
+
+
+
+
+
