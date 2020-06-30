@@ -1,38 +1,38 @@
------------------���� Array-------------------------------------------
-��ɾ
-push ���ӵ����鵽���һλ ���ش�����ĳ���
-pop  ɾ���������һλ  ���ش���������һλ
-unshift ���ӵ�����ĵ�һλ ���ش�����ĳ���
-shift ɾ����һλ ���ش�����ĵ�һλ
-splice �ڼ�λ �� ɾ���� ������ֵ  ����ɾ����ֵ
+-----------------数组 Array-------------------------------------------
+增删
+push 添加到数组到最后一位 返回处理后的长度
+pop  删除数组最后一位  返回处理后的最后一位
+unshift 添加到数组的第一位 返回处理后的长度
+shift 删除第一位 返回处理后的第一位
+splice 第几位 ， 删几个 ，插入值  返回删除的值
 
-��
-reverse �ߵ� �޷��أ�����ԭ����
-concat �ϲ�ֵ���غϲ���� �����ı�ԭ�������
-join() ����ת�ַ��� �����ı�ԭ�������
-slice() ��ȡ���� ���Ҳ�����飨���ı�ԭ�������
-sort ���� �޷��أ�����ԭ����
-toString() ����ת�ַ��� �����ı�ԭ�������
+改
+reverse 颠倒 无返回，操作原数组
+concat 合并值返回合并结果 （不改变原数组对象）
+join() 数组转字符串 （不改变原数组对象）
+slice() 截取数组 结果也是数组（不改变原数组对象）
+sort 排序 无返回，操作原数组
+toString() 数组转字符串 （不改变原数组对象）
 
-��
-filter ɸѡ ����ɸѡ��� �����ı�ԭ�������ȫ���� ���Կ����鴦��
-forEach ɸѡ ����undefined �����ı�ԭ�������ȫ���� �Կ����鴦������undefined
-map ɸѡ ����ɸѡ״̬ �����ı�ԭ�������ȫ���� ���Կ����鴦��
-reduce��fn(�ۼ�ֵ��ֵ��������ǰ����) ,��ʼֵ��������ᱨ�� ��es3��
-reduceRight ��fn(�ۼ�ֵ��ֵ��������ǰ����) ,��ʼֵ��������ᱨ�� ��es3���Ӻ���ǰ����
-some  ɸѡ ����ɸѡ״̬ �����ı�ԭ�������ȫ���� ���Կ����鴦�� ��һ�������������Ͳ��ڱ�����
-indexOf �����Ƿ����ֵ �������� �����±�key û�з���-1
-lastIndexOf �����Ƿ����ֵ �������� �����±�key û�з���-1
-Array.isArray  �ж������鷵��TRUE ����false ��es5��
+查
+filter 筛选 返回筛选结果 （不改变原数组对象）全遍历 不对空数组处理
+forEach 筛选 返回undefined （不改变原数组对象）全遍历 对空数组处理返回undefined
+map 筛选 返回筛选状态 （不改变原数组对象）全遍历 不对空数组处理
+reduce（fn(累加值，值，键，当前数组) ,初始值）空数组会报错 （es3）
+reduceRight （fn(累加值，值，键，当前数组) ,初始值）空数组会报错 （es3）从后向前运算
+some  筛选 返回筛选状态 （不改变原数组对象）全遍历 不对空数组处理 （一旦有满足条件就不在遍历）
+indexOf 数组是否包含值 区分类型 返回下标key 没有返回-1
+lastIndexOf 数组是否包含值 区分类型 返回下标key 没有返回-1
+Array.isArray  判断是数组返回TRUE 其他false （es5）
 ------------------es6---------
 copyWithin
 entries
-fill ���������ֵ ���Ȳ���
+fill 覆盖数组的值 长度不变
 every
-find ɸѡһ�� ����ɸѡ��������ı�ԭ������� ִֻ��һ�� �Կ����鴦������undefined
-findIndex ɸѡһ�� ����ɸѡ���λ�ã����ı�ԭ������� ִֻ��һ��  �Կ����鴦������ -1
-Array.from ɸѡ ����ɸѡ״̬ �����ı�ԭ�������ȫ���� ���Կ����鴦��
-includes �����Ƿ����һ��ֵ �������� ���� TRUE false
-keys().next()  key�±���� next�ǲ��� ����һ������ΪTRUE  ��Ϊfalse
+find 筛选一次 返回筛选结果（不改变原数组对象） 只执行一次 对空数组处理返回undefined
+findIndex 筛选一次 返回筛选结果位置（不改变原数组对象） 只执行一次  对空数组处理返回 -1
+Array.from 筛选 返回筛选状态 （不改变原数组对象）全遍历 不对空数组处理
+includes 数组是否包含一个值 区分类型 返回 TRUE false
+keys().next()  key下标对象 next是步长 含下一个步长为TRUE  无为false
 
------------------����Object-------------------------------------------
+-----------------对象Object-------------------------------------------
